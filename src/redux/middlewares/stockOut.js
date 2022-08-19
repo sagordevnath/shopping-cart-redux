@@ -8,12 +8,13 @@ import {
   import rootReducer from "../rootReducer";
   import toast from "react-hot-toast";
   
-  // Middleware for validation of stock out OF PRODUCTS
+  // validation of stock out OF PRODUCTS
   
   const stockOut = (store) => (next) => (action) => {
   
     //previous state
     const prevState = store.getState();
+    
     //next state
     const upcomingState = [action].reduce(rootReducer, store.getState());
   
@@ -39,13 +40,13 @@ import {
       }
     }
   
-    // Getting the amount of a particular product remaining in the stock
+    // Total Product quantity
     const totalProductQuantity = prevState.products.products.find(
       (product) => product.id === action.payload.id
     ).productQuantity;
   
     
-    //Validating to ensure if a particular product has remaining stock then the middleware will let the action to be dispatched
+    //Validating of stock
     if (
       (action.type === ADD_TO_CART_FIRST ||
         action.type === INCREASE_QUANTITY ||

@@ -1,11 +1,13 @@
-import { combineReducers } from "redux";
-import cartReducer from "./cart/cartReducer";
-import productsReducer from "./products/productsReducer";
+import { applyMiddleware, createStore } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import logger from "redux-logger";
+import stockOut from "./middlewares/stockOut";
+import rootReducer from "./rootReducer";
 
-// to combine all reducers
-const rootReducer = combineReducers({
-  products: productsReducer,
-  cart: cartReducer,
-});
+// create store
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(stockOut, logger))
+);
 
-export default rootReducer;
+export default store;

@@ -1,6 +1,6 @@
 import { ADD_TO_CART, DECREASE_QUANTITY, INCREASE_QUANTITY, REMOVE_FROM_CART} from "./actionTypes";
 
-//function to increase quantity of product added in cart
+//increase quantity of product added in cart
 export const increaseProductQuantity = (id, quantity) => {
   return {
     type: INCREASE_QUANTITY,
@@ -11,7 +11,7 @@ export const increaseProductQuantity = (id, quantity) => {
   };
 };
 
-//function to decrease quantity of product added in cart
+//decrease quantity of product added in cart
 export const decreaseProductQuantity = (id, quantity) => {
   return {
     type: DECREASE_QUANTITY,
@@ -22,7 +22,7 @@ export const decreaseProductQuantity = (id, quantity) => {
   };
 };
 
-//function to add new product to cart
+// add new product to cart
 export const addProductToCart = (
   id,
   productName,
@@ -39,7 +39,7 @@ export const addProductToCart = (
   };
 };
 
-//function to remove product from cart
+// remove product from cart
 export const removeProductFromCart = (id) => {
   return {
     type: REMOVE_FROM_CART,

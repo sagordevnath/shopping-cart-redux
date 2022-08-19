@@ -1,6 +1,6 @@
 import {  ADD_TO_CART_FIRST, DECREASE_TO_CART } from "./actionTypes";
 
-//Initial State:
+// Initial State 
 const initialState = {
   products: [
     {
@@ -24,7 +24,7 @@ const initialState = {
   ],
 };
 
-//Reducer Function:
+// Products Reducer Function
 const productsReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TO_CART_FIRST:

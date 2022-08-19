@@ -5,19 +5,13 @@ import {
     REMOVE_FROM_CART,
   } from "./actionTypes";
   
-  //Initial State
+  // Initial State
   const initialState = {
     totalProducts: 0,
-    cart: [
-      // {
-      //   id: 1,
-      //   productName: "Asus Vivobook X515MA",
-      //   productPrice: 35000,
-      //   addedQuantity: 1,
-      // },
-    ],
+    cart: [],
   };
-  //Reducer Function
+
+  // Cart Reducer Function
   const cartReducer = (state = initialState, action) => {
     switch (action.type) {
       case ADD_TO_CART:
